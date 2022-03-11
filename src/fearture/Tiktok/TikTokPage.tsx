@@ -11,7 +11,6 @@ const TikTokPage = () => {
     return (
         <Draggable handle=".handle">
             <div className="tiktok__wrap ">
-                {/* style={{cursor : 'move'}} */}
                 <div  style={{cursor : 'pointer'}} className="tiktok__wrap-btn" onClick={() => dispatch(themeAction.setOpenTikTok(false))}></div>
                 <div className="tiktok__wrap-header">
                     <div className="tiktok__wrap-header-top"></div>
