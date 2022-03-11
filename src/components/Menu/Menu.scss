@@ -1,0 +1,31 @@
+.menu {
+    width: 70px;
+    height: 280px;
+    border-radius: 100rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+    }
+    &__sidebar {
+        position: absolute;
+        right: -103px;
+        transform: translateX(-50%);
+        width: 345px;
+        border-radius: 1.5rem;
+        z-index: 1000;
+        transform-origin: top right;
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        &.hidden {
+            display: none;
+        }
+    }
+}

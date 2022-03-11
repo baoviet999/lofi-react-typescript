@@ -1,0 +1,34 @@
+.video {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    width: 100%;
+    padding : 8px ;
+    background-color: #14141d;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    cursor : pointer;
+    &:hover{
+        opacity: .7;
+    }
+    &__name{
+        flex :1 ;
+        color :#fff;
+        font-size: 13px;
+        line-height: 20px;
+        & > span {
+            display: block;
+            max-width: 80%
+        }
+    }
+    &__img{
+        width: 130px;
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,65 @@
+.content {
+    &__video {
+        width: 100%;
+        height: 100%;
+        scroll-snap-align: center;
+        flex: none;
+        position: relative;
+        & > video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__detail{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+
+        & > span {
+            color :#fff ;
+            font-weight: 700;
+            font-size: 13px;
+            display: block;
+            width: 50%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+    }
+    &__btn{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform : translate(-50%,-50%);
+        width : 60px;
+        height: 60px;
+        & > svg {
+            width: 100%;
+            height: 100%;
+            fill : rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+        }
+    }
+}
+.tiktok{
+    &__slider{
+        width: 100%;
+        bottom: 45px;
+        height: 2px;
+    }
+    &__thumb{
+        width: 5px;
+        height: 5px;
+    }
+    &__track{
+        background-color: rgba(255, 255, 255, 0.2);
+        height: 2px;
+        &.primary{
+            background-color: rgba(255, 255, 255, 0.8)
+        }
+    }
+}

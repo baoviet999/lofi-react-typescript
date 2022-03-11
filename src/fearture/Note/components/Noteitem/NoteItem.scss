@@ -1,0 +1,16 @@
+.note-item{
+    padding : 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    & > h5{
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+    & > span {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+}

@@ -1,0 +1,17 @@
+.content{
+    position : absolute ;
+    inset : 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center ;
+    // flex-direction: column;
+    display: flex;
+    overflow-y: auto;
+    flex :none;
+    flex-flow: column nowrap;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    scroll-snap-type: y mandatory;
+
+}

@@ -1,0 +1,23 @@
+.mode-item{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding : 15px 15px;
+    background-color:  #14141d;
+    border-radius: 10px ;
+    margin-bottom : 10px ;
+    transition : opacity 0.3s ease-in-out;
+    cursor : pointer;
+    &:hover{
+        opacity: 0.6;
+    }
+    & > img {
+        
+    }
+    & > h6{
+        color :#fff;
+        font-weight: 500;
+        font-size: 17px;
+        margin : 0 10px
+    }
+}
