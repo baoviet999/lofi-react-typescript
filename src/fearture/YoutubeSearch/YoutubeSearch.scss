@@ -3,8 +3,8 @@
     max-height: 600px;
     background-color: rgba(0, 0, 0, 1);
     border-radius: 16px;
-    position: relative;
-    z-index: 40;
+    position: fixed;
+    z-index: 1000;
     top: 120px;
     left: 565px;
     padding: 1.5rem;
