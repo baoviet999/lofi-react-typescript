@@ -12,7 +12,7 @@ const TIKTOK: Tiktok[] = [
     {
         video: video1,
         namePage: "_editnhacchill_",
-        content: " Dám viết tên babe của bạn vào đây không ?  #xuhuong🌟",
+        content: " Dám viết tên babe của bạn vào đây không ???  #xuhuong🌟",
         account: {
             avatar: img1,
             follower: "505.9K",

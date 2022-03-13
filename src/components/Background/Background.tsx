@@ -10,12 +10,19 @@ import {
     themeAction,
 } from "components/Navbar/themeSlice";
 import Note from "fearture/Note/Note";
-import Tiktok from "fearture/Tiktok/page/TiktokPage/Tiktok";
 import TikTokPage from "fearture/Tiktok/TikTokPage";
 import YoutubeSearch from "fearture/YoutubeSearch/YoutubeSearch";
 import React, { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
 import "./Background.scss";
+import {
+    getHome,
+    getSong,
+    getPlaylists,
+    getVideoDetail,
+    //... and many other services
+} from "nhaccuatui-api-full";
+import AccountModal from "fearture/Auth/components/AccountModal/accountModal";
+import { selectGuest } from "fearture/Auth/authSlice";
 
 export interface BackgroundProps {
     onPlay?: boolean;
@@ -33,6 +40,9 @@ const Background = ({ onPlay, onPause, song, volumn }: BackgroundProps) => {
     const isOpenNote = useAppSelector(selectModeStatus);
     const themeVideo = useAppSelector(selectThemeVideo);
 
+    // getHome().then((data) => console.log(data));
+    // getVideoDetail("IXTbg1bBelQKh").then((data) => console.log(data));
+
     const pauseMusic = () => {
         audioRef.current.pause();
     };
@@ -49,6 +59,20 @@ const Background = ({ onPlay, onPause, song, volumn }: BackgroundProps) => {
     }, [random, songList, isPlaying, dispatch]);
 
     const isOpenTiktok = useAppSelector(selectOpenTiktok);
+    const handleAsync = async () => {
+        const data = await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("aaa");
+            }, 2000);
+        });
+        console.log(data);
+    };
+    useEffect(() => {
+        handleAsync();
+    }, []);
+
+    const guestData = useAppSelector(selectGuest)
+
     return (
         <div className="backround">
             <div className="background__container">
@@ -98,6 +122,7 @@ const Background = ({ onPlay, onPause, song, volumn }: BackgroundProps) => {
             <YoutubeSearch />
             {isOpenNote.note && <Note />}
             {isOpenTiktok && <TikTokPage />}
+            
         </div>
     );
 };

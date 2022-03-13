@@ -1,5 +1,4 @@
 import { useAppDispatch, useAppSelector } from "App/store";
-import { tiktokLogo } from "assets/images";
 import { selectAudioRef, themeAction } from "components/Navbar/themeSlice";
 import { MUSIC_SLEEPY } from "link/music-sleepy";
 import { MUSIC_VN } from "link/music-vn";
@@ -11,9 +10,11 @@ import ReactSlider from "react-slider";
 import {
     bookMark,
     chillIcon,
-    jazzyIcon, searchIcon, sleepyIcon,
+    jazzyIcon,
+    searchIcon,
+    sleepyIcon,
     volumeMaxIcon,
-    volumeMinIcon
+    volumeMinIcon,
 } from "../../../assets/icons";
 import "./Mood.scss";
 import NoiseItem from "./NoiseItem";
@@ -136,7 +137,6 @@ const MoodItem = ({ active, onActiveTab, name, icon, onPlayListSong }: MoodItem)
     const handleList = () => {
         if (!onPlayListSong || !onActiveTab) return;
         onActiveTab(name);
-
         switch (name) {
             case "Sleepy":
                 onPlayListSong(MUSIC_SLEEPY);
@@ -156,14 +156,15 @@ const MoodItem = ({ active, onActiveTab, name, icon, onPlayListSong }: MoodItem)
                 break;
         }
     };
+
     return (
         <div
-            className={`mood__item ${name === "Youtube" && "mood__ytb"} ${
+            className={`mood__item ${name === "Youtube" || (name === "Tiktok" && "mood__ytb")} ${
                 name === "Youtube" || active ? "active" : ""
-            }`}
+            } ${name === "TikTok" || active ? "active" : ""}`}
             onClick={handleList}
         >
-            <img alt="" src={icon} className={` ${name === "Youtube"? "mood__scale" : ""}`} />
+            <img alt="" src={icon} className={` ${name === "Youtube" ? "mood__scale" : ""}`} />
             <span>{name}</span>
         </div>
     );

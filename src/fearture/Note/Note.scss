@@ -4,11 +4,25 @@
     background-color: #000;
     border-radius: 12px;
     position: absolute;
-    top: 200px;
+    top: 150px;
     left: 410px;
     color: #fff;
     padding: 15px;
     z-index: 998;
+    & > img {
+        position: absolute;
+        top: 14px;
+        right: 18px;
+        width: 20px;
+        height: 20px;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.2s linear;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
     &__container {
         display: flex;
         align-items: flex-start;

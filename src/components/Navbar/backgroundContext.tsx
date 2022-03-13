@@ -1,20 +1,30 @@
 import { Context } from "model/common";
-import { createContext, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
-export const BackgroundContext = createContext({})
-
-const BackgroundProvider = ({ children }: { children: JSX.Element }) => {
-    
-    const [theme , setTheme] = useState<string>('day')
-    const value :Context = {
-        theme,
-        setTheme,
-    }
-
-    return (
-        <BackgroundContext.Provider value={value}>
-            {children}
-        </BackgroundContext.Provider>
-    )
+interface BackgroundProviderProps {
+    children: ReactNode;
 }
-export default BackgroundProvider
+interface DefaultBackGround {
+    theme: "day" | "night";
+    onChange: (theme: DefaultBackGround["theme"]) => void;
+}
+const defaultBackGroundContext: DefaultBackGround = {
+    theme: "day",
+    onChange: () => {},
+};
+
+export const BackgroundContext = createContext(defaultBackGroundContext);
+
+const BackgroundProvider = ({ children }: BackgroundProviderProps) => {
+    const [theme, setTheme] = useState<DefaultBackGround["theme"]>(defaultBackGroundContext.theme);
+    const onChange = (theme: DefaultBackGround["theme"]) => {
+        setTheme(theme);
+    };
+    const value: DefaultBackGround = {
+        theme,
+        onChange,
+    };
+
+    return <BackgroundContext.Provider value={value}>{children}</BackgroundContext.Provider>;
+};
+export default BackgroundProvider;

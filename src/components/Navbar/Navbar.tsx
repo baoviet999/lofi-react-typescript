@@ -1,5 +1,7 @@
 import { useAppDispatch, useAppSelector } from "App/store";
 import LazyImg from "components/LazyImage";
+import { selectGuest, selectUser } from "fearture/Auth/authSlice";
+import AccountModal from "fearture/Auth/components/AccountModal/accountModal";
 import React, { useState } from "react";
 import Switch from "react-switch";
 // icon
@@ -8,10 +10,9 @@ import { logoImg } from "../../assets/images";
 import "./Navbar.scss";
 import { selectTheme, selectThemeVideo, themeAction } from "./themeSlice";
 
-
 const Navbar = () => {
-    const dataTheme = useAppSelector(selectThemeVideo)
-    const hasSetTheme = dataTheme.night?.status
+    const dataTheme = useAppSelector(selectThemeVideo);
+    const hasSetTheme = dataTheme.night?.status;
 
     const [activeSubNav, setActiveSubNav] = useState<boolean>(false);
 
@@ -42,7 +43,13 @@ const Navbar = () => {
         }
     };
 
-
+    const guestData = useAppSelector(selectGuest);
+    const userData = useAppSelector(selectUser);
+    const loginDataWave = userData.displayName ? userData : guestData;
+    const [openAccount, setOpenAccount] = useState<boolean>(false);
+    const handleAccount = () => {
+        setOpenAccount(true);
+    };
     return (
         <div className="nav">
             <div className="nav__container">
@@ -130,9 +137,15 @@ const Navbar = () => {
                     <div className="nav__option nav__right-item" onClick={handleFullScreen}>
                         <LazyImg src={fullscreenIcon} />
                     </div>
-                    <div className="nav__option nav__right-item">
+                    <div className="nav__option nav__right-item" onClick={handleAccount}>
                         <LazyImg src={profileIcon} />
                     </div>
+                    {openAccount && (
+                        <AccountModal
+                            onCloseModal={() => setOpenAccount(false)}
+                            accountData={loginDataWave}
+                        />
+                    )}
                     <div className="nav__option-btn nav__right-item">
                         <span>Share</span>
                     </div>

@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from "components/Navbar/themeSlice";
+import userReducer from "fearture/Auth/authSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 const store = configureStore({
     reducer: {
         theme: themeReducer,
+        auth : userReducer
     },
 });
 // Infer the `RootState` and `AppDispatch` types from the store itself

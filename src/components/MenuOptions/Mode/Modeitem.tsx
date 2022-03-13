@@ -8,7 +8,7 @@ export interface ModeProps {
 }
 const Modeitem = ({ name, id, icon, onClick }: ModeProps) => {
     return (
-        <div className="mode-item" onClick={()=> onClick(id)}>
+        <div className={`mode-item ${name === 'Notes' && 'active'}`} onClick={() => onClick(id)}>
             <img src={icon} alt="" />
             <h6>{name}</h6>
         </div>

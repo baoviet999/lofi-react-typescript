@@ -1,0 +1,55 @@
+.account {
+    &__member {
+        display: flex;
+        align-items: center !important;
+        flex-direction: column;
+        width: 100%;
+        & > h3 {
+            text-align: center;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 700;
+        }
+        &-active {
+            margin-top: 20px;
+            width: 100%;
+            height: 80px;
+            background-color: #14141d;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            border-radius: 10px;
+        }
+        &-plan {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        &-header {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            & > span {
+                font-size: 10px;
+                display: block;
+                padding: 1px 2px;
+                border: 1px solid rgb(34, 197, 94);
+                margin-left: 5px;
+            }
+        }
+        &-footer {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        &-btn{
+            color : #f3a952;
+            font-size: 15px;
+            font-weight: 600;
+        }
+    }
+}

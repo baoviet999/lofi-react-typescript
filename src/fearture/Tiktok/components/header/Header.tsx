@@ -2,14 +2,14 @@ import React from "react";
 import { BiSearch } from "react-icons/bi";
 import { MdOutlineLiveTv } from "react-icons/md";
 
-interface HeaderProps{
-    className  :string
+interface HeaderProps {
+    className: string;
 }
 
-const Header = ({className} : HeaderProps) => {
+const Header = ({ className }: HeaderProps) => {
     return (
         <div className="tiktok__header">
-            <div style={{cursor : 'move'}} className={`tiktok__header-icon ${className}`}>
+            <div className={`tiktok__header-icon ${className}`}>
                 <MdOutlineLiveTv />
             </div>
             <div className="tiktok__header-content">
@@ -24,4 +24,3 @@ const Header = ({className} : HeaderProps) => {
 };
 
 export default Header;
-

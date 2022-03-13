@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BiMusic } from "react-icons/bi";
 import "./Description.scss";
 
@@ -10,8 +10,6 @@ interface DescriptionProps {
 }
 
 const Description = ({ music, namePage, content, playing }: DescriptionProps) => {
-    console.log(playing);
-
     return (
         <div className="description">
             <div className="description__name">@{namePage}</div>
@@ -29,6 +27,7 @@ const Description = ({ music, namePage, content, playing }: DescriptionProps) =>
                     <div>{music}</div>
                 </div>
             </div>
+            <div className="header__container"></div>
         </div>
     );
 };

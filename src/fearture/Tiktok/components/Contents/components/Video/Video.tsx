@@ -1,7 +1,6 @@
-import { beach1 } from "assets/videos";
 import useElementOnScreen from "hooks/useAutoPlay";
 import { Tiktok } from "model/common";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BiPlay } from "react-icons/bi";
 import ReactSlider from "react-slider";
 import { ClimbingBoxLoader } from "react-spinners";
@@ -10,10 +9,10 @@ import Logo from "../Logo/Logo";
 import "./Video.scss";
 export interface TikTokVideoProps {
     detailVideo?: boolean;
-    item?: Tiktok; 
+    item?: Tiktok;
 }
 
-const Video = ({  detailVideo , item}: TikTokVideoProps) => {
+const Video = ({ detailVideo, item }: TikTokVideoProps) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [playing, setPlaying] = useState(false);
     useEffect(() => {
@@ -49,14 +48,14 @@ const Video = ({  detailVideo , item}: TikTokVideoProps) => {
         setProgress((video.currentTime / video.duration) * 100);
     };
     useEffect(() => {
-        videoRef.current?.addEventListener('timeupdate', () => {
-            showCurrentTime(videoRef.current)
-        })
+        videoRef.current?.addEventListener("timeupdate", () => {
+            showCurrentTime(videoRef.current);
+        });
         return () =>
             videoRef.current?.removeEventListener("timeupdate", () => {
                 showCurrentTime(videoRef?.current);
             });
-    },[])
+    }, []);
     if (detailVideo) {
         return (
             <div className="content__video">
@@ -67,10 +66,9 @@ const Video = ({  detailVideo , item}: TikTokVideoProps) => {
             </div>
         );
     }
-
     return (
         <div className="content__video">
-            <video onClick={handlePlay} id='video' autoPlay ref={videoRef} loop src={item?.video} />
+            <video onClick={handlePlay} id="video" autoPlay ref={videoRef} loop src={item?.video} />
             {!playing && (
                 <div className="content__btn" onClick={handlePlay}>
                     <BiPlay />
@@ -80,7 +78,7 @@ const Video = ({  detailVideo , item}: TikTokVideoProps) => {
                 className="tiktok__slider"
                 onChange={(value) => {
                     if (videoRef.current) {
-                        videoRef.current.currentTime = value / videoRef.current.duration;
+                        videoRef.current.currentTime = (value * videoRef.current.duration) / 100;
                     }
                 }}
                 value={progress}
@@ -95,7 +93,12 @@ const Video = ({  detailVideo , item}: TikTokVideoProps) => {
                 renderThumb={(props) => <div {...props} className="tiktok__thumb" />}
             />
             <Logo item={item} />
-            <Description music={ item?.status.music} playing={playing} namePage={item?.namePage} content={item?.content} />
+            <Description
+                music={item?.status.music}
+                playing={playing}
+                namePage={item?.namePage}
+                content={item?.content}
+            />
         </div>
     );
 };
