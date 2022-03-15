@@ -103,11 +103,9 @@ const YoutubeSearch = () => {
         }
     }, [search]);
     
-
     const handleSearch = () => {
         setSearch(searchTerm);
         setSearchTerm("");
-        
     };
 
     return (

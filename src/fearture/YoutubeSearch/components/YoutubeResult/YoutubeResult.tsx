@@ -1,5 +1,5 @@
 import { Videos } from "fearture/YoutubeSearch/YoutubeSearch";
-import React from "react";
+import React, { memo } from "react";
 import { CircularProgress } from "react-cssfx-loading/lib";
 import VideoItem from "../VideoItem/VideoItem";
 
@@ -29,4 +29,4 @@ const YoutubeResult = ({ loading, successData, handleOpenModal }: YoutubeProps) 
     );
 };
 
-export default YoutubeResult;
+export default memo(YoutubeResult);

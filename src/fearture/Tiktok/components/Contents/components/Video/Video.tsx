@@ -2,6 +2,7 @@ import useElementOnScreen from "hooks/useAutoPlay";
 import { Tiktok } from "model/common";
 import { useEffect, useRef, useState } from "react";
 import { BiPlay } from "react-icons/bi";
+import { useInView } from "react-intersection-observer";
 import ReactSlider from "react-slider";
 import { ClimbingBoxLoader } from "react-spinners";
 import Description from "../Description/Description";
@@ -13,6 +14,9 @@ export interface TikTokVideoProps {
 }
 
 const Video = ({ detailVideo, item }: TikTokVideoProps) => {
+    const { ref, inView, entry } = useInView({
+        threshold: 0,
+    });
     const videoRef = useRef<HTMLVideoElement>(null);
     const [playing, setPlaying] = useState(false);
     useEffect(() => {
@@ -56,6 +60,7 @@ const Video = ({ detailVideo, item }: TikTokVideoProps) => {
                 showCurrentTime(videoRef?.current);
             });
     }, []);
+
     if (detailVideo) {
         return (
             <div className="content__video">
@@ -67,8 +72,16 @@ const Video = ({ detailVideo, item }: TikTokVideoProps) => {
         );
     }
     return (
-        <div className="content__video">
-            <video onClick={handlePlay} id="video" autoPlay ref={videoRef} loop src={item?.video} />
+        <div className={`content__video ${inView}`} ref={ref}>
+            <video
+                className={``}
+                onClick={handlePlay}
+                id="video"
+                autoPlay={inView}
+                ref={videoRef}
+                loop
+                src={item?.video}
+            />
             {!playing && (
                 <div className="content__btn" onClick={handlePlay}>
                     <BiPlay />
