@@ -18,7 +18,7 @@ function App() {
     const guestData = useAppSelector(selectGuest);
     const isGuestLogin = Boolean(guestData.displayName);
     const isLogin = isGuestLogin || isLoging;
-    console.log(isLogin);
+    
     useEffect(() => {
         if (isLogin) {
             var timer = setTimeout(() => {

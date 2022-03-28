@@ -5,11 +5,11 @@ import { nextIcon, pauseIcon, playIcon, prevIcon } from "../../assets/icons";
 import "./Footer.scss";
 const Footer = () => {
     const dispatch = useAppDispatch();
-    const isPlaying = useAppSelector(selectIsPlaying)
-    const audioRef = useAppSelector(selectAudioRef)
-    const listSong = useAppSelector(selectListSong)
+    const isPlaying = useAppSelector(selectIsPlaying);
+    const audioRef = useAppSelector(selectAudioRef);
+    const listSong = useAppSelector(selectListSong);
     const handleClickPlay = () => {
-        console.log(isPlaying)
+        console.log(isPlaying);
         const isOpen = isPlaying ? false : true;
         dispatch(themeAction.setIsPlaying(isOpen));
         // if (audioRef.onplay) {
@@ -17,15 +17,15 @@ const Footer = () => {
         // } else {
         //     audioRef.play();
         // }
-    }
+    };
     const handlePlayRandom = () => {
-        dispatch(themeAction.setRandom(listSong))
-    }
+        dispatch(themeAction.setRandom(listSong));
+    };
     return (
         <div className="footer">
             <div className="footer__container">
                 <div className="footer__title">
-                    <span>Music by -lofi.co&clone by baoviet</span>
+                    <span>Music by -lofi.co&clone </span>
                 </div>
                 <div className="footer__btn">
                     <div className="footer__btn-next" onClick={handlePlayRandom}>
