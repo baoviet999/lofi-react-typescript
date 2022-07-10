@@ -65,7 +65,7 @@ const Video = ({ detailVideo, item }: TikTokVideoProps) => {
         return (
             <div className="content__video">
                 <div className="content__detail">
-                    <span>Drop down and double click to play!!</span>
+                    <span style={{ fontSize: "20px" }}>Bin sinh nhật vui vẻ 🎉</span>
                     <ClimbingBoxLoader color={"#ff0050"} loading={!playing} size={20} />
                 </div>
             </div>

@@ -7,22 +7,14 @@ import {
     selectRandomIndex,
     selectTheme,
     selectThemeVideo,
-    themeAction,
+    themeAction
 } from "components/Navbar/themeSlice";
+import { selectGuest } from "fearture/Auth/authSlice";
 import Note from "fearture/Note/Note";
 import TikTokPage from "fearture/Tiktok/TikTokPage";
 import YoutubeSearch from "fearture/YoutubeSearch/YoutubeSearch";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./Background.scss";
-import {
-    getHome,
-    getSong,
-    getPlaylists,
-    getVideoDetail,
-    //... and many other services
-} from "nhaccuatui-api-full";
-import AccountModal from "fearture/Auth/components/AccountModal/accountModal";
-import { selectGuest } from "fearture/Auth/authSlice";
 
 export interface BackgroundProps {
     onPlay?: boolean;

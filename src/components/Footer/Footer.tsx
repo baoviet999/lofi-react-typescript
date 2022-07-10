@@ -25,7 +25,9 @@ const Footer = () => {
         <div className="footer">
             <div className="footer__container">
                 <div className="footer__title">
-                    <span>Music by -lofi.co&clone </span>
+                    <span>
+                        My gift to you <strong>Bin</strong>
+                    </span>
                 </div>
                 <div className="footer__btn">
                     <div className="footer__btn-next" onClick={handlePlayRandom}>
@@ -39,7 +41,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer__note">
-                    <span>Hellu</span>
+                    <span>♥️</span>
                 </div>
             </div>
         </div>

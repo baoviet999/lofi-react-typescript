@@ -8,14 +8,15 @@ import video4 from "../assets/videott/video4.mp4";
 import img5 from "../assets/videott/video5.jpeg";
 import video5 from "../assets/videott/video5.mp4";
 import video6 from "../assets/videott/video6.mp4";
+import menma from "../assets/videott/menma.jpg";
 const TIKTOK: Tiktok[] = [
     {
-        video: "https://v16-webapp.tiktok.com/8cca0cb44dba73660290fcaa39df391a/623db4e1/video/tos/useast2a/tos-useast2a-pve-0037-aiso/9661f2ea932f4f07908b40151bff132b/?a=1988&br=2234&bt=1117&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3LGnz7ThfcYJDXq&l=20220325062558010245133207130E84FC&lr=tiktok&mime_type=video_mp4&net=0&pl=0&qs=0&rc=amp5eTw6ZnBwOzMzZjgzM0ApNjtkNWhoZTw8N2QzZDhoZ2c0Zi4ucjRnMnBgLS1kL2NzczJiNGIyNWBjNS0vX2IzLi46Yw%3D%3D&vl=&vr=",
-        namePage: "_editnhacchill_",
-        content: " Dám viết tên babe của bạn vào đây không ???  #xuhuong🌟",
+        video: "https://res.cloudinary.com/vietmenam/video/upload/v1657468829/menma/happy_iqjoqp.mp4",
+        namePage: "menma",
+        content: "Chúc bin học thật giỏi kiếm thật nhiều tiền để có thể về đây cùng t đi Phú Quốc nhá",
         account: {
-            avatar: img1,
-            follower: "505.9K",
+            avatar: menma,
+            follower: "999.9K",
             following: "2",
             totalLike: "5.5M",
             isFollow: false,
@@ -26,7 +27,7 @@ const TIKTOK: Tiktok[] = [
             like: "588.7K",
             comment: "31.4K",
             share: "10K",
-            music: "Anh Sẽ Đón Em (Cukak TikTok)",
+            music: "Happy birthday bin",
             isLike: true,
         },
     },

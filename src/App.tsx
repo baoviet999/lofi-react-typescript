@@ -5,6 +5,7 @@ import Menu from "components/Menu/Menu";
 import NotFound from "components/NotFound/NotFound";
 import { selectGuest, selectUser } from "fearture/Auth/authSlice";
 import Login from "fearture/Auth/Login";
+import Birthday from "fearture/Birthday/Birthday";
 import React, { useEffect, useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import Background from "./components/Background/Background";
@@ -18,7 +19,7 @@ function App() {
     const guestData = useAppSelector(selectGuest);
     const isGuestLogin = Boolean(guestData.displayName);
     const isLogin = isGuestLogin || isLoging;
-    
+    const [load, setLoad] = useState(false);
     useEffect(() => {
         if (isLogin) {
             var timer = setTimeout(() => {
