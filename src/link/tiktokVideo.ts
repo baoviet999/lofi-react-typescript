@@ -13,7 +13,8 @@ const TIKTOK: Tiktok[] = [
     {
         video: "https://res.cloudinary.com/vietmenam/video/upload/v1657468829/menma/happy_iqjoqp.mp4",
         namePage: "menma",
-        content: "Chúc bin học thật giỏi kiếm thật nhiều tiền để có thể về đây cùng t đi Phú Quốc nhá",
+        content:
+            "I hope your special day will bring you lots of happiness, love and fun. You deserve them a lot.",
         account: {
             avatar: menma,
             follower: "999.9K",
