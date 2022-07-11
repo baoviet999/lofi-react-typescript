@@ -111,6 +111,7 @@ const Video = ({ detailVideo, item }: TikTokVideoProps) => {
                 playing={playing}
                 namePage={item?.namePage}
                 content={item?.content}
+                content2={item?.content2}
             />
         </div>
     );

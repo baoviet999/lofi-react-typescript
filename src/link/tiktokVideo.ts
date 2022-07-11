@@ -15,6 +15,8 @@ const TIKTOK: Tiktok[] = [
         namePage: "menma",
         content:
             "I hope your special day will bring you lots of happiness, love and fun. You deserve them a lot.",
+        content2: "Đọc tiếng anh nó mới ý nghĩa dịch làm gì :v",
+
         account: {
             avatar: menma,
             follower: "999.9K",
@@ -36,6 +38,7 @@ const TIKTOK: Tiktok[] = [
         video: video2,
         namePage: "nhac.va.tinh",
         content: "Đôi lời cuộc đời mình đã lỡ phó thác xuân xanh ",
+        content2: "Đôi lời cuộc đời mình đã lỡ phó thác xuân xanh ",
         account: {
             avatar: img2,
             follower: "505.9K",
@@ -57,6 +60,7 @@ const TIKTOK: Tiktok[] = [
         video: video3,
         namePage: "_hthun02",
         content: "Che mắt lại 🦋#tiktok #viral #fyp #foryou #hthun02 #dtu",
+        content2: "Che mắt lại 🦋#tiktok #viral #fyp #foryou #hthun02 #dtu",
         account: {
             avatar: img1,
             follower: "505.9K",
@@ -78,6 +82,7 @@ const TIKTOK: Tiktok[] = [
         video: video4,
         namePage: "_editnhacchill_ 🌻",
         content: "Biết tìm đâu slow",
+        content2: "Biết tìm đâu slow",
         account: {
             avatar: img1,
             follower: "376k",
@@ -99,6 +104,7 @@ const TIKTOK: Tiktok[] = [
         video: video5,
         namePage: "motngaymotbannhac.acv",
         content: "Hạnh phúc cho người nhưng buồn chuyện đôi ta...",
+        content2: "Hạnh phúc cho người nhưng buồn chuyện đôi ta...",
         account: {
             avatar: img5,
             follower: "210K",
@@ -120,6 +126,7 @@ const TIKTOK: Tiktok[] = [
         video: video6,
         namePage: "_editnhacchill_",
         content: "Nếu có cơ hội , bạn muốn quay lại với nyc không ?",
+        content2: "Nếu có cơ hội , bạn muốn quay lại với nyc không ?",
         account: {
             avatar: img1,
             follower: "391.5k",

@@ -57,6 +57,7 @@ export interface Tiktok {
     video: string;
     namePage: string;
     content: string;
+    content2: string;
     account: TiktokAccount;
     status: TiktokStatus;
 }
